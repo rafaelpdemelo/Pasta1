@@ -1,0 +1,106 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package programacao1;
+import java.util.Scanner;
+
+/**
+ *
+ * @author rafaelpdemelo
+ */
+public class Programacao1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+    Scanner input = new Scanner (System.in);
+    int qtdfaturas, diapagamento = 0, i, diferencadias = 0;
+    float faturas = 0, condicao1 = 0, condicao2 = 0, condicao3;
+    int datalimite = 11;
+    double total = 0, total1 = 0;
+    double soma = 0;
+    
+    
+    // usuario deve inserir a quantidade de faturas
+    
+        System.out.println("Quantas faturas voce deseja pagar? ");
+        qtdfaturas = input.nextInt();
+    // enquanto a quantidade de faturas for igual a 0, o programa apresenta a mensagem 1 e repete o processo.
+    
+        while(qtdfaturas == 0){
+           if (qtdfaturas == 0){
+            System.out.println("Numero invalido, tente novamente! ");
+            System.out.println("Quantas faturas voce deseja pagar? ");
+            qtdfaturas = input.nextInt();
+            
+        } 
+        }
+        
+        /* o funcionamento do programa vai ser todo dentro da funcao FOR, pois 
+        * vai depender de quantas vezes o usuario digita a qtd de faturas. 
+        *
+        */        
+        for (i = 0; i < qtdfaturas; ++i){
+            while (diapagamento < 1 || diapagamento > 31){
+            System.out.println("Agora digite o dia do pagamento (1 - 31) : ");
+             diapagamento = input.nextInt();
+             
+             
+             /* setando para se o dia do pagamento for menor que 1 ou maior que 31
+             * o programa negar e pedir para inserir uma data valida
+             *
+             */
+
+              if (diapagamento <1 || diapagamento > 31){
+                  System.out.println("Dia errado. Tente novamente!");
+              }
+              /*
+              Definindo if para poder a mensagem ser referente a fatura de numero correspondente.
+              */
+             } if (qtdfaturas >= 1){
+               System.out.println("Digite a sua " + (i+1) + " fatura:");
+               faturas = input.nextFloat();
+
+             diferencadias = (diapagamento - datalimite);
+            
+             System.out.println("A data limite para pagamento é: Dia 11 ");
+         
+              if (diapagamento < datalimite ){
+              condicao1 = (int) (faturas - (faturas * 0.05));
+             System.out.println("O valor da fatura ficou em: R$ "+ condicao1 );
+             
+               
+             } if (diapagamento == datalimite) {
+                 System.out.println("O valor da fatura ficou em: R$ " + faturas); 
+
+             } if (diapagamento > datalimite){
+                diferencadias = (diapagamento - datalimite);
+                soma += diferencadias;
+                total = (faturas * 0.02) + faturas * (diferencadias * 0.01) + faturas;
+               System.out.println("O valor da fatura ficou em: R$" + total);
+               
+             }  
+      
+    
+             
+        } System.out.println("O Total de dias, juntando todas as contas é de: "+ soma + "dias");
+       
+    
+} if (qtdfaturas > 1000){
+            System.out.println("Meta ótima alcançada!");
+    } if (qtdfaturas > 500 && qtdfaturas <= 1000){
+        System.out.println("Meta intermediaria alcançada!");
+    } if (qtdfaturas > 100 && qtdfaturas <= 500){
+        System.out.println("Abaixo da meta!");
+    } if (qtdfaturas < 100){
+        System.out.println("Programa descontinuado!");
+    }
+    
+} /*DESCRIÇÃO DAS CARACTERISTICAS DO PROGRAMA: 
+   *Aluno: Rafael Pereira de Melo ( Inicial: R)
+   *Matrícula: 2020109804 (Par)
+   *Dia de Aniversário: 11
+}
